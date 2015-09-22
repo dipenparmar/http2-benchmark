@@ -1,0 +1,26 @@
+{
+  "name": "http2-benchmark",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Simple benchmark of HTTP/2 server push",
+  "license": "Unlicense",
+  "author": {
+    "name": "James Reggio",
+    "email": "james.reggio@gmail.com",
+    "url": "http://regg.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesreggio/http2-benchmark.git"
+  },
+  "homepage": "https://github.com/jamesreggio/http2-benchmark",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": "4.1"
+  },
+  "dependencies": {
+    "http2": "~3.2"
+  }
+}
