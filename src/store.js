@@ -1,4 +1,6 @@
-const fixtures = require('./fixtures');
+/* jscs:disable requireDotNotation */
+
+const fixtures = require('../data/fixtures');
 
 function dedupe(arr) {
   return Object.keys(arr.reduce((obj, value) => {
@@ -8,7 +10,6 @@ function dedupe(arr) {
 }
 
 const store = module.exports = {
-
   getPayload(path) {
     const fixture = fixtures[path];
     if (!fixture) {
@@ -19,11 +20,14 @@ const store = module.exports = {
       path,
       body: JSON.stringify(fixture),
       references: store.getReferences(fixture),
-      headers: {},
     };
 
+    const headers = obj.headers = {
+      'content-type': 'application/json',
+      'content-length': obj.body.length,
+    };
     if (fixture['__etag']) {
-      obj.headers.etag = fixture['__etag'];
+      headers.etag = fixture['__etag'];
     }
 
     return obj;
@@ -43,5 +47,4 @@ const store = module.exports = {
       return refs;
     }, []));
   },
-
 };

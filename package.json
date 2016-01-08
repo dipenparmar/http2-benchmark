@@ -1,6 +1,6 @@
 {
   "name": "http2-benchmark",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "private": true,
   "description": "Simple benchmark of HTTP/2 server push",
   "license": "Unlicense",
@@ -15,12 +15,19 @@
   },
   "homepage": "https://github.com/jamesreggio/http2-benchmark",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "test": "jscs src && jshint src"
   },
   "engines": {
     "node": "4.1"
   },
   "dependencies": {
-    "http2": "~3.2"
+    "http2": "^3.2.0",
+    "multimeter": "^0.1.1"
+  },
+  "devDependencies": {
+    "javascript": "jamesreggio/javascript#0.0.2",
+    "jscs": "^2.4.0",
+    "jshint": "^2.8.0"
   }
 }
